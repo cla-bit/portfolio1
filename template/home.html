@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+                <div class="page-header min-vh-80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="position-relative">
+                                    <div class="body-cover">
+                                        <div class="row">
+                                            <div id="container" class="text-center">
+                                                I'm a
+                                                <div id=flip>
+                                                    <div><div>Python</div></div>
+                                                    <div><div>FullStack</div></div>
+                                                    <div><div>Website</div></div>
+                                                    <div><div>Graphic</div></div>
+                                                </div>
+                                                Developer!
+                                            </div>
+                                        </div>
+                                        <hr class="horizontal light">
+
+
+                                        <div class="circle-grid">
+                                            <div class="circle-box">
+                                                <div class="circle-big">
+                                                    <div class="circle-small">
+                                                        <h6 class="inside-text">
+                                                            <a href="{% url 'home:about_me' %}">About me</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="circle-box">
+                                                <div class="circle-big">
+                                                    <div class="circle-small">
+                                                        <h6 class="inside-text">
+                                                            <a href="{% url 'home:project_list' %}">Projects</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="circle-box">
+                                                <div class="circle-big">
+                                                    <div class="circle-small">
+                                                        <h6 class="inside-text">
+                                                            <a href="{% url 'home:contact' %}">Contact me</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="circle-box box-4">
+                                                <div class="circle-big">
+                                                    <div class="circle-small">
+                                                        <h6 class="inside-text">
+                                                            <a href="{{ resume.url }}" download="{{ resume.url }}" target="_blank">Resume</a>
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

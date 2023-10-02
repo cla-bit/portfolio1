@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+                <div class="overlay"></div>
+
+                <div class="page-header min-vh-80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="positive-relative row">
+                                <div class="col-12 col-xl-7">
+                                    <div class="category-menu category-menu-2">
+                                        <div class="card category-heading pb-0 p-3 card-header bg-dark-blue d-flex flex-row align-items-center justify-content-between">
+                                            <h2 class="categories-toggle text-white">{{ project.name }} Demo</h2>
+                                            <i class="fa fa-video text-white"></i>
+                                        </div>
+                                        <div class="h-auto category-menu-list p-3">
+                                            {% if project.video_url_on == True %}
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WYcBDm8-Klg?si=DvtPZry0hv7tLSRJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            {% else %}
+                                            <p class="text-white text-center text-bolder">Video is not Available</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col col-xl-5">
+                                    <div class="category-menu category-menu-2">
+                                        <div class="card category-heading pb-0 p-3 bg-gradient-dark-blue card-header">
+        									<h2 class="categories-toggle">{{ project.category }}</h2>
+                                        </div>
+                                        <div class="card-ody p-3">
+                                            <ul class="list-group category-list-box">
+                                                <li class="list-group-item border-0 d-flex align-items-center px-2 mb-2 pt-0">
+                                                    <h5 class="text-capitalize text-dark-blue text-bolder">{{ project.name }}</h5></li>
+                                                <li class="list-group-item border-0 d-flex align-items-center px-2 mb-2 pt-0">
+                                                    <h6 class="text-capitalize text-dark-blue text-bolder">Source Code Files:
+                                                        {% if project.git_url_on == True %}
+                                                        <a href="{{ project.git_url }}" class="text-md text-info text-lowercase">click here</a>
+                                                        {% else %}
+                                                        <a class="text-md text-dark text-normal">Not Available</a>
+                                                        {% endif %}
+                                                    </h6></li>
+                                                <li class="list-group-item border-0 d-flex align-items-center px-2 mb-2 pt-0">
+                                                    <h6 class="text-capitalize text-dark-blue text-bolder">Project Description:
+                                                        <p class="text-dark">{{ project.description }}</p>
+                                                    </h6></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <a class="home-logo" href="{% url 'home:project_list' %}" id="home-logo">
+                                <img class="home-icon" src="{% static '/asset/img/menu1.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+version: "3.11"
+services:
+  # myApp
+  portfolio-app:
+    build: ./
+    container_name: portfolio-app
+    volumes:
+      - mydata:/app/data
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+volumes:
+  mydata:
